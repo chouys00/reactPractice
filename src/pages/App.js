@@ -1,36 +1,20 @@
 import './App.scss';
-import { Route,withRouter  } from 'react-router-dom';
 import Header from '../components/homepage/homePageHeader';
-// import workPage from './workPage/workPage';
-// import homePage from './homePage/homePage';
-// import workPageDetail from './workPage/workPageDetail';
+import { renderRoutes } from 'react-router-config';
 import routes from '../routes'
 
-const App = (props) => {
+const App = () => {
   return (
     <div className={"app"}>
       <Header></Header>
       <section className={"app-content"}>
-        {
-          routes&&routes.map((route,i)=>{
-            const {path,exact,routes} = route
-            return(
-              <Route
-                key={i}
-                path={path}
-                exact={exact}
-                render={(routeProps) => <route.component routes={routes} {...routeProps} />}
-              />
-
-            )
-          })
-        }
+        {renderRoutes(routes)}
       </section>
       <footer className={"app-footer"}>
-        <div className={"app-copyRight"}>Copyright © 2020 LeoLiu All rights reserved.</div>
+        <div className={"app-copyRight"}>Copyright © 2020 All rights reserved.</div>
       </footer>
     </div>
   );
 }
 
-export default withRouter(App);
+export default App;

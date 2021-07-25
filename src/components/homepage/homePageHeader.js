@@ -6,8 +6,8 @@ const homePageHeader = () => {
     return (
         <header className={"app-header"}>
             <Link to="/"><span>Home</span></Link>
-            <Link to="/works"><span>Works</span></Link>
-            {/* <Link to="/works/workPageDetail"><span>workPageDetail</span></Link> */}
+            <Link to="/work"><span>Work</span></Link>
+            <Link to="/work/workDetail"><span>workDetail</span></Link>
       </header> 
     )
 }

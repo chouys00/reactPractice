@@ -1,26 +1,28 @@
-import home from './pages/homePage/homePage';
-import works from './pages/workPage/workPage';
-import workDetail from './pages/workPage/workPageDetail';
+import Home from './pages/home/home';
+import Work from './pages/work/work';
+import WorkDetail from './pages/work/workDetail';
 
 const routes=[
     {
         path: '/',
-        component: home,
+        component: Home,
+        label: "首頁",
         exact: true,
-        breadcrumbName: 'home',
     },
     {
-        path: '/works',
-        component: works,
-        breadcrumbName: 'works',
+        path: '/work',
+        component: Work,
+        label: "練習1",
+        // exact: true,
         routes:[
             {
-                path: '/works/workDetail',
-                component: workDetail,
-                breadcrumbName: 'workDetail',
+                path: '/work/workDetail',
+                component: WorkDetail,
+                label: "練習1詳細",
+                exact: true,
             }
         ]
-    }
+    },
 ]
 
 export default routes;

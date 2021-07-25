@@ -2,13 +2,13 @@
 
 import React from 'react';
 
-const homePage = () => {
+const home = () => {
     return(
         <div>
-            homePage
+            home
         </div> 
     )
    
 }
 
-export default homePage;
+export default home;
