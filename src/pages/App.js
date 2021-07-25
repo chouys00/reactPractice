@@ -10,9 +10,6 @@ const App = () => {
       <section className={"app-content"}>
         {renderRoutes(routes)}
       </section>
-      <footer className={"app-footer"}>
-        <div className={"app-copyRight"}>Copyright © 2020 All rights reserved.</div>
-      </footer>
     </div>
   );
 }
