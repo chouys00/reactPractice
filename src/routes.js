@@ -1,6 +1,9 @@
 import Home from './pages/home/home';
 import LuckyWheel from './pages/work/luckyWheel';
-import WorkDetail from './pages/work/workDetail';
+import SlideInOut from './pages/work2/slideInOut';
+import Blur from './pages/work3/blur';
+// import WorkDetail from './pages/work/workDetail';
+
 
 const routes=[
     {
@@ -21,6 +24,16 @@ const routes=[
         //         exact: true,
         //     }
         // ]
+    },
+    {
+        path: '/slideInOut',
+        component: SlideInOut,
+        label: "滑進",
+    },
+    {
+        path: '/blur',
+        component: Blur,
+        label: "毛玻璃",
     },
 ]
 

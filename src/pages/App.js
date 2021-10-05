@@ -7,9 +7,7 @@ const App = () => {
   return (
     <div className={"app"}>
       <Header></Header>
-      <section className={"app-content"}>
-        {renderRoutes(routes)}
-      </section>
+      {renderRoutes(routes)}
     </div>
   );
 }
