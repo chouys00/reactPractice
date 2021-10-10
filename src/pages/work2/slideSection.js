@@ -1,46 +1,15 @@
-// onClick时需要的参数，要传进来
-// class Item extends PureComponent {
-//     render() {
-//         const { id, text, selected, onClick } = this.props
-//         return (
-//             <li
-//                 className={selected ? 'selected' : ''}
-//                 onClick={onClick(id)}
-//             >
-//                 <span>{text}</span>
-//             </li>
-//         )
-//     }
-// }
-//
-// class List extends Component {
-//     state = {
-//         selected: null
-//     }
-//
-//     handleClick(id) {
-//         this.setState({selected: id})
-//     }
-//
-//     render() {
-//         const { items } = this.props
-//         return (
-//             <ul>
-//                 {
-//                     items.map((item, index) => {
-//                         const {text, id} = item
-//                         return (
-//                             <Item
-//                                 key={id}
-//                                 id={id} // 传进去
-//                                 selected={this.state.selected === id}
-//                                 text={text}
-//                                 onClick={this.handleClick}
-//                             />
-//                         )
-//                     })
-//                 }
-//             </ul>
-//         )
-//     }
-// }
+import './slideSection.scss'
+
+const slideSection = ({show})=>{
+
+    let animationStyle = {
+        height: show?'calc((100vh - 100px) / 2)':0,
+        background: show? "#8DD6CD" : "#db7093",
+    }
+    return (
+        <div className='slideSection' style={animationStyle}>
+        </div>
+    )
+}
+
+export default slideSection;

@@ -2,6 +2,7 @@ import Home from './pages/home/home';
 import LuckyWheel from './pages/work/luckyWheel';
 import SlideInOut from './pages/work2/slideInOut';
 import Blur from './pages/work3/blur';
+import Work4 from './pages/work4';
 // import WorkDetail from './pages/work/workDetail';
 
 
@@ -34,6 +35,11 @@ const routes=[
         path: '/blur',
         component: Blur,
         label: "毛玻璃",
+    },
+    {
+        path: '/work4',
+        component: Work4,
+        label: "work4",
     },
 ]
 

@@ -1,5 +1,5 @@
 import './slideInOut.scss'
-// import SlideSection from "./slideSection"
+import SlideSection from "./slideSection"
 import React,{ useEffect, useState } from 'react'
 import { assertAnyTypeAnnotation } from '@babel/types'
 
@@ -20,7 +20,7 @@ const SlideInOut = () =>{
                     open? "close":"open"
                 }</button>
             </div>
-            {/*<SlideSection show={open}></SlideSection>*/}
+            <SlideSection show={open}></SlideSection>
         </>
     )
 }
