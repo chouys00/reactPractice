@@ -9,7 +9,7 @@ const home = () => {
             {/*<div className='sideBar'>*/}
 
             {/*</div>*/}
-            <div className='content'>
+            {/*<div className='content'>*/}
                 {/*<div className='box'>*/}
                     <div className='item'>
                         1
@@ -30,7 +30,7 @@ const home = () => {
                         6
                     </div>
                 {/*</div>*/}
-            </div>
+            {/*</div>*/}
         </div> 
     )
    
