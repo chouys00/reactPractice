@@ -12,10 +12,11 @@ const Carousel = ({carouselData}) => {
         }, 3000)
 
         return () => clearInterval(autoRound);
-    }, [currentIndex])
+    }, [currentIndex,carouselData])
 
 
     const handleClick = (operate = 'next') => {
+        if(carouselData.length === 0) return
         if (operate === 'next') {
             setCurrentIndex(currentIndex => (currentIndex + 1) % carouselData.length)
         } else {
@@ -29,7 +30,7 @@ const Carousel = ({carouselData}) => {
                 {
                     carouselData.map((item, key) =>
                         <div className='sliderItem'>
-                            <img key={key} src={item} alt="Background"/>
+                            <img key={key} src={item.picUrl} alt="Background"/>
                         </div>
                     )
                 }
