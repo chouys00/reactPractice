@@ -4,35 +4,45 @@ import DotSection from './dotSection.js'
 import {BsFillCaretRightFill} from "react-icons/bs";
 
 const Carousel = ({carouselData}) => {
-    const [currentIndex,setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(0)
 
     useEffect(() => {
-        console.log(111111111111, carouselData)
-    }, [])
+        const autoRound = setInterval(() => {
+            handleClick()
+        }, 3000)
+
+        return () => clearInterval(autoRound);
+    }, [currentIndex])
 
 
-    const handleClick = (operate) => {
-        // console.log(2222222222, operate)
+    const handleClick = (operate = 'next') => {
+        if (operate === 'next') {
+            setCurrentIndex(currentIndex => (currentIndex + 1) % carouselData.length)
+        } else {
+            setCurrentIndex(currentIndex - 1 >= 0 ? currentIndex - 1 : carouselData.length - 1)
+        }
     }
 
     return (
         <div className='carousel'>
-            <div className='slider'>
+            <div className='slider' style={{transform: `translateX(-${600 * currentIndex}px)`}}>
                 {
-                    carouselData.map((item,index) =>
+                    carouselData.map((item, key) =>
                         <div className='sliderItem'>
-                            <img key={index} src={item} alt="Background"/>
+                            <img key={key} src={item} alt="Background"/>
                         </div>
                     )
                 }
             </div>
             <BsFillCaretRightFill
                 className='btnRight carouselBtn'
-                onClick={() => handleClick('next')}>
+                onClick={() => handleClick('next')}
+            >
             </BsFillCaretRightFill>
             <BsFillCaretRightFill
                 className='btnLeft carouselBtn'
-                onClick={() => handleClick('prev')}>
+                onClick={() => handleClick('prev')}
+            >
             </BsFillCaretRightFill>
             <DotSection carouselData={carouselData} currentIndex={currentIndex}/>
         </div>

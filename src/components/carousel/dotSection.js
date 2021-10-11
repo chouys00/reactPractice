@@ -5,10 +5,10 @@ const DotSection = ({carouselData, currentIndex}) => {
     return (
         <div className='dotSection'>
             {
-                carouselData.map((value, index) =>
-                    <div key={index}
+                carouselData.map((value, key) =>
+                    <div key={key}
                          className={`
-                              dot ${currentIndex === index ?
+                              dot ${currentIndex === key ?
                              'dot--active' :
                              ''
                          }`}
