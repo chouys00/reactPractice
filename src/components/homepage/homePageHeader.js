@@ -16,6 +16,7 @@ const homePageHeader = () => {
             <Link to="/slideInOut"><span>滑進</span></Link>
             <Link to="/blur"><span>毛玻璃</span></Link>
             <Link to="/work4"><span>輪播</span></Link>
+            <Link to="/work5"><span>List</span></Link>
             {/* <Link to="/work/workDetail"><span>workDetail</span></Link> */}
       </header> 
     )
