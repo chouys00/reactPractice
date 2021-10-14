@@ -7,11 +7,7 @@
 
   > div {
     position: relative;
-    .wheelPic {
-      width: 500px;
-      height: 500px;
-      transition: 1s; // 加入 transition 具備動畫
-    }
+
     .startPic {
       position: absolute;
       left: 150px;
@@ -20,5 +16,24 @@
       height: 200px;
       cursor: pointer;
     }
+    .wheelPic {
+      width: 500px;
+      height: 500px;
+
+    }
+    .isRotate{
+      //transition: 2s;  // 加入 transition 具備動畫
+      //transform: rotate(360deg);
+
+      animation: isRotate 1s linear infinite;
+    }
+
+    @keyframes  isRotate{
+      100%{
+        transform: rotate(720deg);
+      }
+    }
+
+
   }
 }

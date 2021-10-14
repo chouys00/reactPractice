@@ -1,26 +1,49 @@
 import './slideInOut.scss'
 import SlideSection from "./slideSection"
-import React,{ useEffect, useState } from 'react'
-import { assertAnyTypeAnnotation } from '@babel/types'
+import React, {useEffect, useState} from 'react'
+import {assertAnyTypeAnnotation} from '@babel/types'
+import Modal from '../../components/modal'
 
-const SlideInOut = () =>{
-    const [open,setOpen] = useState(false)
+const SlideInOut = () => {
+    const [openSlider, setOpenSlider] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
 
-    
-    useEffect(()=>{
-        let obj = []
-        console.log(1111111,JSON.stringify(obj)==="{}")
-    })
+    const handleRightBtn = () => {
+        console.log(1111111111, 'handleRightBtn');
+        setOpenModal(false);
+    }
+    const handleLeftBtn = () => {
+        console.log(11111111111, 'handleLeftBtn');
+        setOpenModal(false);
+    }
 
-    
-    return(
+
+    return (
         <>
             <div className='slideInOut'>
-                <button onClick={()=>{setOpen(!open)}}>{
-                    open? "close":"open"
+                <button onClick={() => {
+                    setOpenSlider(!openSlider)
+                }}>{
+                    openSlider ? "closeSlider" : "openSlider"
+                }</button>
+                <button onClick={() => {
+                    setOpenModal(true)
+                }}>{
+                    openModal ? "closeModal" : "openModal"
                 }</button>
             </div>
-            <SlideSection show={open}></SlideSection>
+            <SlideSection show={openSlider}></SlideSection>
+
+            {
+                openModal && <Modal
+                    title="我是抬頭"
+                    dialogWidth="60%"
+                    handleLeftBtn={handleLeftBtn}
+                    handleRightBtn={handleRightBtn}
+                >
+                    <span>吃飽撐著的內容</span>
+                </Modal>
+            }
         </>
     )
 }

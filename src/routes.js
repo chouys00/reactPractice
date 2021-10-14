@@ -4,6 +4,7 @@ import SlideInOut from './pages/work2/slideInOut';
 import Blur from './pages/work3/blur';
 import Work4 from './pages/work4';
 import Work5 from './pages/work5';
+import Work6 from './pages/work6';
 // import WorkDetail from './pages/work/workDetail';
 
 
@@ -46,6 +47,11 @@ const routes=[
         path: '/work5',
         component: Work5,
         label: "work5",
+    },
+    {
+        path: '/work6',
+        component: Work6,
+        label: "work6",
     },
 ]
 
