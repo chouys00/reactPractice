@@ -5,14 +5,13 @@ const DataList = ({listData,listItem={}}) => {
 
 
     useEffect(() => {
-        console.log(111111111, listData)
     }, [])
 
     return (
         <div className='dataList'>
             {
-                listData.map(item =>
-                    listItem(item)
+                listData.map((item,index) =>
+                    listItem(item,index)
                 )
             }
         </div>

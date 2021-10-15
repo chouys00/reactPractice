@@ -49,7 +49,6 @@ const Work = ({route}) => {
     // }
 
     const startFunc = () => {
-        console.log(111111111111,getResult(0,5))
         setStart(true)
         // setTimeout(() => {
         //     setStart(false)

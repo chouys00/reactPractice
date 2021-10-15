@@ -9,4 +9,6 @@ export const getPicList = (data) => {
 }
 
 
-
+export const getMemberList = (data) => {
+    return req("get", "/memberList", data)
+}

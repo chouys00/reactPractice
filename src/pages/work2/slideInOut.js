@@ -9,11 +9,9 @@ const SlideInOut = () => {
     const [openModal, setOpenModal] = useState(false)
 
     const handleRightBtn = () => {
-        console.log(1111111111, 'handleRightBtn');
         setOpenModal(false);
     }
     const handleLeftBtn = () => {
-        console.log(11111111111, 'handleLeftBtn');
         setOpenModal(false);
     }
 

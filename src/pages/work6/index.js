@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import './work6.scss';
 import Table from '../../components/table';
-import {getListData} from '../../api/data.js'
+import {getListData, getMemberList} from '../../api/data.js'
 
 const Work6 = () => {
     const [tableData, setTableData] = useState([])
@@ -34,13 +34,14 @@ const Work6 = () => {
         fetchListData()
     }, [])
 
+
     const fetchListData = async (page = 1, limit = 10) => {
+
         await getListData({
             _page: currentPage,
             _limit: limit,
         })
             .then(res => {
-                console.log(111111111111, res.data)
                 setTableData(tableData.concat(res.data))
             })
             .catch(error => {

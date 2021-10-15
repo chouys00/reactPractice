@@ -1,7 +1,7 @@
 import {useEffect, useState, useRef} from 'react';
 import './work5.scss';
 import DataList from '../../components/dataList';
-import {getListData} from '../../api/data.js'
+import {getListData, getMemberList} from '../../api/data.js'
 
 const Work5 = () => {
     const [listData, setListData] = useState([])
@@ -15,6 +15,8 @@ const Work5 = () => {
 
 
     const handleScroll = () => {
+
+        //取得元素
         const listBoxEl = listBoxNode.current
         if (listBoxEl) {
             const scrollPos = listBoxEl.scrollTop + listBoxEl.clientHeight;
@@ -28,16 +30,30 @@ const Work5 = () => {
     }
 
     const fetchListData = async (page = 1, limit = 10) => {
-        await getListData({
+
+        await getMemberList({
             _page: currentPage,
             _limit: limit,
         })
             .then(res => {
                 setListData(listData.concat(res.data))
+                console.log(111111111111, res.data)
             })
             .catch(error => {
                 console.log('error', error);
             });
+
+        // 獲取api
+        // await getListData({
+        //     _page: currentPage,
+        //     _limit: limit,
+        // })
+        //     .then(res => {
+        //         setListData(listData.concat(res.data))
+        //     })
+        //     .catch(error => {
+        //         console.log('error', error);
+        //     });
     }
 
 
@@ -62,15 +78,16 @@ const Work5 = () => {
 export default Work5;
 
 
-
-
-
-const listItem = (item) => {
+const listItem = (item,index) => {
     return (
         <div className='dataList_item'>
-            <div className='dataList_item_title'>{item.id}</div>
-            <div className='dataList_item_content'>{item.title}</div>
-            <div className='dataList_item_content'>{item.thumbnailUrl}</div>
+            <div className='dataList_item_title'>{index+1}</div>
+            <div className='dataList_item_content'>{`姓名：${item.name}`}</div>
+            <div className='dataList_item_content'>{`帳號：${item.username}`}</div>
+            <div className='dataList_item_content'>{`角色：${item.role}`}</div>
+            <div>
+                <button>詳情</button>
+            </div>
         </div>
     )
 }
