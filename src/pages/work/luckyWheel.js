@@ -4,10 +4,12 @@ import {useState} from 'react';
 import wheelPicture from '../../assets/luckyWheel/obj_02.png'
 import startPicture from '../../assets/luckyWheel/obj_01.png'
 
-const Work = ({route}) => {
+const Work = () => {
     const [start, setStart] = useState(false)
     const [result, setResult] = useState(null)
-    const [style,setStyle] = useState()
+    const [isAnnounce, setIsAnnounce] = useState(false)
+    const [rotateStyle, setRotateStyle] = useState({})
+
 
     // const [prizeList,setPrizeList] = useState([])
 
@@ -39,8 +41,6 @@ const Work = ({route}) => {
         },
     ]
 
-    const getResult = (min, max) => Math.random() * (max - min) + min;
-
 
     // let wheelStyle={
     //     // transform:'rotate('+deg+'deg)',transition:a
@@ -48,18 +48,66 @@ const Work = ({route}) => {
     //     transform: "rotate(900deg)"
     // }
 
+    const getResult = (min, max) => Math.ceil((Math.random() * (max - min) + min));
+
     const startFunc = () => {
         setStart(true)
+        // infiniteRotate()
+
+
+        // 模擬 api 回傳開獎結果
+        // setTimeout(() => {
+        //     setResult(getResult(1, 6))
+        //     setStart(false)
+        //
+        //
+        // }, 1000)
+
+
         // setTimeout(() => {
         //     setStart(false)
         // }, 3000)
     }
 
+    // let rotateDeg = 360
+
+    const infiniteRotate = () => {
+        const el = document.getElementById('wheel')
+        // el.style.transition = 'none'
+        // el.style.transform = `none`
+        // el.style.transition = 'all 1000ms'
+        // el.style.transform = `rotate(7200deg)`
+
+        setTimeout(() => {
+            // setStart(false)
+            el.style.transition = 'none'
+            el.style.transform = `none`
+            el.style.transition = 'all 5500ms'
+            el.style.transform = `rotate(7200deg)`
+
+        }, 1000)
+
+        // const el = document.getElementById('wheel')
+        //
+        // el.style.transition = 'all 1s'
+        // let rotateDeg = 360;
+        // el.style.transform = "rotate(" + rotateDeg + "deg)"
+        //
+        // setTimeout(() => {
+        //     el.style.transition = 'none'
+        //     el.style.transform = `none`
+        //     // if(isAnnounce){
+        //     infiniteRotate()
+        //     // }
+        // }, 1000)
+    }
+
+
     return (
         <div className='luckyWheel'>
             <div>
                 <img
-                    id="whell"
+                    id="wheel"
                     className={`wheelPic ${start ? 'isRotate' : ''}`}
                     src={wheelPicture}
                     alt="wheelPicture"
@@ -74,7 +122,6 @@ const Work = ({route}) => {
                 >
                 </img>
             </div>
-            {/* {renderRoutes(route.routes)} */}
         </div>
     )
 }

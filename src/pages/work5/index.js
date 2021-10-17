@@ -29,6 +29,7 @@ const Work5 = () => {
         }
     }
 
+    // 獲取api
     const fetchListData = async (page = 1, limit = 10) => {
 
         await getMemberList({
@@ -37,23 +38,10 @@ const Work5 = () => {
         })
             .then(res => {
                 setListData(listData.concat(res.data))
-                console.log(111111111111, res.data)
             })
             .catch(error => {
                 console.log('error', error);
             });
-
-        // 獲取api
-        // await getListData({
-        //     _page: currentPage,
-        //     _limit: limit,
-        // })
-        //     .then(res => {
-        //         setListData(listData.concat(res.data))
-        //     })
-        //     .catch(error => {
-        //         console.log('error', error);
-        //     });
     }
 
 
