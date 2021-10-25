@@ -12,9 +12,13 @@ const Pagination = ({currentPage, pageSize, totalCount, changePage}) => {
             pageList.map((item, key) => {
                 if (item > 0 && item <= lastPageIndex)
                     return (
-                        <span key={key} className={`${item === currentPage ? "active" : null}`}>
-                            {item}
-                        </span>
+                        <span
+                            key={key}
+                            onClick={() => changePage(item)}
+                            className={`${item === currentPage ? 'active' : null}`}
+                        >
+                    {item}
+                </span>
                     )
             })
         )

@@ -5,10 +5,11 @@ import Blur from './pages/work3/blur';
 import Work4 from './pages/work4';
 import Work5 from './pages/work5';
 import Work6 from './pages/work6';
+import Work7 from './pages/work7';
 // import WorkDetail from './pages/work/workDetail';
 
 
-const routes=[
+const routes = [
     {
         path: '/',
         component: Home,
@@ -52,6 +53,11 @@ const routes=[
         path: '/work6',
         component: Work6,
         label: "work6",
+    },
+    {
+        path: '/work7',
+        component: Work7,
+        label: "work7",
     },
 ]
 
